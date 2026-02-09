@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💋 Kiss Day 2025</title>
+    
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════
+    KISS DAY WEBSITE - ROMANTIC & PLAYFUL DESIGN
+    ═══════════════════════════════════════════════════════════════════
+    
+    CUSTOMIZATION:
+    1. Line 147: Your romantic question
+    2. Line 245: Image file name
+    3. Line 250: Your message
+    4. Line 587-588: Email & Web3Forms key
+    
+    GITHUB DEPLOYMENT:
+    1. Create repo: "kiss-day-2025"
+    2. Upload as "index.html" + photo as "kissday.jpeg"
+    3. Settings > Pages > Enable
+    4. Share the romance! 💋
+    ═══════════════════════════════════════════════════════════════════
+    -->
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Roboto:wght@400;500;700&display=swap');
+        
+        :root {
+            --kiss-red: #FF1744;
+            --hot-pink: #FF69B4;
+            --soft-pink: #FFB6C1;
+            --light-pink: #FFF0F5;
+            --white: #FFFFFF;
+            --text-dark: #3C1518;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--kiss-red) 0%, var(--hot-pink) 50%, var(--soft-pink) 100%);
+            color: var(--white);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════
+           FLOATING KISSES
+        ═══════════════════════════════════════════════════════════════ */
+        .kisses-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-kiss {
+            position: absolute;
+            font-size: 34px;
+            opacity: 0;
+            animation: floatKiss 7s infinite ease-in-out;
+        }
+        
+        @keyframes floatKiss {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(0deg) scale(1);
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(360deg) scale(1.4);
+            }
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════
+           MAIN SCREEN
+        ═══════════════════════════════════════════════════════════════ */
+        .screen {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .question-container {
+            background: var(--white);
+            border-radius: 40px;
+            padding: 65px 55px;
+            max-width: 770px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(255, 23, 68, 0.4);
+            animation: kissIn 1.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 5px solid var(--kiss-red);
+        }
+        
+        @keyframes kissIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.7) rotate(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0);
+            }
+        }
+        
+        .kiss-icon {
+            font-size: 7.5rem;
+            display: block;
+            margin-bottom: 32px;
+            animation: kissFloat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes kissFloat {
+            0%, 100% {
+                transform: scale(1) rotate(-5deg);
+            }
+            50% {
+                transform: scale(1.12) rotate(5deg);
+            }
+        }
+        
+        .date-badge {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            color: var(--kiss-red);
+            margin-bottom: 28px;
+            font-weight: 700;
+        }
+        
+        .main-question {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.3rem, 6vw, 3.6rem);
+            color: var(--text-dark);
+            line-height: 1.3;
+            margin-bottom: 42px;
+            font-weight: 700;
+        }
+        
+        .buttons-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .choice-btn {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            padding: 22px 54px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        }
+        
+        .yes-btn {
+            background: linear-gradient(135deg, var(--kiss-red), var(--hot-pink));
+            color: white;
+        }
+        
+        .yes-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 23, 68, 0.4);
+        }
+        
+        .no-btn {
+            background: linear-gradient(135deg, var(--soft-pink), var(--light-pink));
+            color: var(--text-dark);
+            position: absolute;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════
+           CELEBRATION SCREEN
+        ═══════════════════════════════════════════════════════════════ */
+        .celebration-screen {
+            display: none;
+            min-height: 100vh;
+            opacity: 0;
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 100%);
+        }
+        
+        .celebration-screen.active {
+            display: flex;
+            animation: celebrateFadeIn 1.1s ease-out forwards;
+        }
+        
+        @keyframes celebrateFadeIn {
+            to { opacity: 1; }
+        }
+        
+        .celebration-content {
+            max-width: 880px;
+            text-align: center;
+        }
+        
+        .celebration-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.6rem, 7vw, 4.8rem);
+            color: var(--kiss-red);
+            margin-bottom: 34px;
+            font-weight: 700;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .kisses-display {
+            font-size: 5.4rem;
+            margin: 34px 0;
+            animation: kissesPop 1.2s ease-out 0.5s backwards;
+        }
+        
+        @keyframes kissesPop {
+            0% {
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2) rotate(0deg);
+            }
+            100% {
+                transform: scale(1) rotate(0);
+                opacity: 1;
+            }
+        }
+        
+        .celebration-image {
+            width: 100%;
+            max-width: 720px;
+            height: auto;
+            border-radius: 35px;
+            margin: 44px auto;
+            box-shadow: 0 28px 75px rgba(255, 23, 68, 0.3);
+            border: 6px solid var(--kiss-red);
+            animation: fadeInUp 0.8s ease-out 0.7s backwards;
+        }
+        
+        .celebration-message {
+            font-size: 1.32rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin: 44px auto;
+            max-width: 680px;
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease-out 0.9s backwards;
+        }
+        
+        .celebration-message strong {
+            color: var(--kiss-red);
+            font-weight: 700;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════
+           LIPSTICK MARKS EFFECT
+        ═══════════════════════════════════════════════════════════════ */
+        .lipstick {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+            animation: lipstickFly 2.6s ease-out forwards;
+        }
+        
+        @keyframes lipstickFly {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-140px) rotate(720deg) scale(0.4);
+                opacity: 0;
+            }
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════
+           MOBILE RESPONSIVE
+        ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .question-container {
+                padding: 50px 40px;
+            }
+            
+            .kiss-icon {
+                font-size: 6rem;
+            }
+            
+            .choice-btn {
+                font-size: 1.35rem;
+                padding: 19px 43px;
+            }
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Kisses Background -->
+    <div class="kisses-bg" id="kissesBg"></div>
+    
+    <!-- ═══════════════════════════════════════════════════════════════
+         QUESTION SCREEN
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="screen" id="questionScreen">
+        <div class="question-container">
+            <span class="kiss-icon">💋</span>
+            <div class="date-badge">Kiss Day • February 13, 2025</div>
+            <h1 class="main-question">
+                May I Steal A Kiss... Forever?
+            </h1>
+            <!-- ↑ CUSTOMIZE YOUR QUESTION ↑ -->
+            
+            <div class="buttons-container">
+                <button class="choice-btn yes-btn" id="yesBtn">
+                    Yes, Kiss Me! 💋
+                </button>
+                <button class="choice-btn no-btn" id="noBtn">
+                    Maybe... 😊
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ═══════════════════════════════════════════════════════════════
+         CELEBRATION SCREEN
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="screen celebration-screen" id="celebrationScreen">
+        <div class="celebration-content">
+            <h2 class="celebration-title">
+                Sealed With A Kiss! 💋💕
+            </h2>
+            
+            <div class="kisses-display">💋💖💋💖💋</div>
+            
+            <img 
+                src="kissday.jpeg" 
+                alt="Our romantic moment" 
+                class="celebration-image"
+            />
+            <!-- ↑ CHANGE IMAGE FILENAME HERE ↑ -->
+            
+            <p class="celebration-message">
+                Every kiss with you is magic - a moment frozen in time where nothing else matters 
+                but us. Your kisses are my favorite addiction, my sweetest memory, 
+                and my most treasured moment of every day.
+                <br><br>
+                From our first kiss to this very moment, and every kiss that's yet to come - 
+                each one reminds me why I chose you, why I love you, and why I'll never stop. 💋
+                <br><br>
+                <strong>Happy Kiss Day! Here's to a lifetime of stolen kisses! 💕</strong>
+            </p>
+            <!-- ↑ CUSTOMIZE YOUR MESSAGE ABOVE ↑ -->
+        </div>
+    </div>
+    
+    <script>
+        // ═══════════════════════════════════════════════════════════════
+        // FLOATING KISSES
+        // ═══════════════════════════════════════════════════════════════
+        function createFloatingKisses() {
+            const container = document.getElementById('kissesBg');
+            const kisses = ['💋', '💕', '❤️', '💖', '💗', '💘'];
+            
+            setInterval(() => {
+                const kiss = document.createElement('div');
+                kiss.className = 'floating-kiss';
+                kiss.textContent = kisses[Math.floor(Math.random() * kisses.length)];
+                kiss.style.left = Math.random() * 100 + '%';
+                kiss.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                kiss.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(kiss);
+                
+                setTimeout(() => kiss.remove(), 9000);
+            }, 800);
+        }
+        
+        createFloatingKisses();
+        
+        // ═══════════════════════════════════════════════════════════════
+        // NO BUTTON MOVEMENT
+        // ═══════════════════════════════════════════════════════════════
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        
+        function moveNoButton() {
+            const maxX = window.innerWidth - noBtn.offsetWidth - 40;
+            const maxY = window.innerHeight - noBtn.offsetHeight - 40;
+            
+            const randomX = Math.max(20, Math.random() * maxX);
+            const randomY = Math.max(20, Math.random() * maxY);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            noBtn.style.zIndex = '1000';
+        }
+        
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+        
+        // ═══════════════════════════════════════════════════════════════
+        // YES BUTTON - CELEBRATION
+        // ═══════════════════════════════════════════════════════════════
+        yesBtn.addEventListener('click', () => {
+            document.getElementById('questionScreen').classList.add('hidden');
+            
+            const celebrationScreen = document.getElementById('celebrationScreen');
+            celebrationScreen.classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            createLipstickMarks();
+            sendEmail();
+        });
+        
+        // ═══════════════════════════════════════════════════════════════
+        // LIPSTICK MARKS EFFECT
+        // ═══════════════════════════════════════════════════════════════
+        function createLipstickMarks() {
+            const lipstickEmojis = ['💋', '💕', '❤️', '💖', '💗', '💘', '💝'];
+            
+            for (let i = 0; i < 48; i++) {
+                setTimeout(() => {
+                    const lipstick = document.createElement('div');
+                    lipstick.className = 'lipstick';
+                    lipstick.textContent = lipstickEmojis[Math.floor(Math.random() * lipstickEmojis.length)];
+                    lipstick.style.left = Math.random() * 100 + 'vw';
+                    lipstick.style.bottom = '-50px';
+                    lipstick.style.fontSize = (Math.random() * 24 + 20) + 'px';
+                    
+                    document.body.appendChild(lipstick);
+                    
+                    setTimeout(() => lipstick.remove(), 2600);
+                }, i * 65);
+            }
+        }
+        
+        // ═══════════════════════════════════════════════════════════════
+        // EMAIL NOTIFICATION
+        // ═══════════════════════════════════════════════════════════════
+        async function sendEmail() {
+            const YOUR_EMAIL = 'ajaychavan_in@outlook.com';
+            const ACCESS_KEY = '1cb04b7e-b18d-4f18-8249-40c248681b7d';
+            
+            try {
+                await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        access_key: ACCESS_KEY,
+                        subject: '💋 Sealed With A Kiss - Kiss Day!',
+                        from_name: 'Kiss Day Website',
+                        message: `💋 ROMANTIC SUCCESS! 💋\n\nShe wants all the kisses on Kiss Day!\n\n💕 Sealed with love!\n🕐 Time: ${new Date().toLocaleString()}\n\nTime for romantic moments! 😘`,
+                        to: YOUR_EMAIL
+                    })
+                });
+                console.log('✅ Kiss Day notification sent!');
+            } catch (error) {
+                console.error('❌ Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
